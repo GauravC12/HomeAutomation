@@ -16,6 +16,8 @@ Template.rooms.rooms = function()
 return Rooms.find();
 }
 
+Template.rooms.message =
+
   Template.hello.events({
     'click input': function () {
       // template data, if any, is available in 'this'
@@ -46,6 +48,15 @@ Router.map(function () {
 Router.map(function () {
   this.route('mobile', {
     path: '/mobile',
+    waitOn: function () {
+
+    }
+  });
+});
+
+Router.map(function () {
+  this.route('os', {
+    path: '/os',
     waitOn: function () {
 
     }
