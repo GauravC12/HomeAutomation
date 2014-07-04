@@ -43,6 +43,15 @@ Router.map(function () {
   });
 });
 
+Router.map(function () {
+  this.route('mobile', {
+    path: '/mobile',
+    waitOn: function () {
+
+    }
+  });
+});
+
 if (Meteor.isServer) {
   Meteor.startup(function () {
     // code to run on server at startup
