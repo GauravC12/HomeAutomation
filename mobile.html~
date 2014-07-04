@@ -1,28 +1,50 @@
 <template name="mobile">
    <style>
 	.phone {
-		border: 1px;
-		border-color: black;
-		width: 320px;
+		border: black 2px solid;
+		width: 330px;
 		height: 600px;
-		background-color: lightgray;
+		background-image: url('background.jpg');
 	}
    </style>
-   <center>	
+   <div style='height: 800px; background-color: black;'>
+	<center style='background: black;'>	
 	<div class="phone">
 		{{> homescreen}}
 	</div>
    </center>
+   </div>
 </template>
 
 <template name="homescreen">
 	<style>
 		.body {
-			padding: 20px;
+			margin-top: 10px;
+			margin-left: 10px;
+			color: white;
+		}
+
+		.app > img {
+			background-color: white;
+			width: 40px;
+			height: 40px;
+			border-radius: 10px;
+		}
+		.app {
+			margin: 5px;
+		}
+		.app:hover {
+			background-color: #c0c0c0;
 		}
 	</style>
-	<div class="body">
-		<img src="" style='height: 100px; width: 100px;'/>
-		<div style='margin-top: 5px;'>Calendar</div>
+	<div class="body row-fluid">
+		<div class='app span3'>
+			<img src="Calendar.png"/>
+			<div style='margin-top: 5px;'>Calendar</div>
+		</div>	
+		<div class='app span3'>
+			<img src="Thermostat.png"/>
+			<div style='margin-top: 5px;'>Thermostat</div>
+		</div>	
 	</div>
 </template>
