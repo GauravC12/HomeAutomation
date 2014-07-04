@@ -1,0 +1,48 @@
+<head>
+  <title>homeAutomation</title>
+</head>
+
+<body>
+
+  {{renderPage}}
+
+</body>
+
+<template name="hello">
+  <h1>Hello Arpith</h1>
+  {{welcome}}
+  <input type="button" value="Click" />
+</template>
+
+
+<template name="os">
+
+<div class="hero-unit" style="height:100%;width:100%;margin-top:5%">
+
+
+
+
+</div>
+
+</template>
+
+<template name="rooms">
+<div class="bs-docs-grid" style="height:100%;width:100%;margin-top:5%;margin-left:1%;color:white;">
+<div class="row-fluid show-grid" >
+   {{#each rooms}}
+  <div class="span6" style="height:250px;background:{{color}};margin-left:0%" ><center  style="margin-top:20%;">{{name}}</center></div>
+  <!---
+  <div class="span6" style="height:250px;background:#f1c40f;margin-left:0%" ><center  style="margin-top:20%;">Kitchen</center></div>
+  <div class="span6" style="height:250px;background:#e74c37;margin-left:0"  ><center style="margin-top:20%;">Bedroom</center></div>
+  <div class="span6" style="height:250px;background:#2ecc71;margin-left:0%" ><center style="margin-top:20%;">Living Room</center></div>
+  <div class="span6" style="height:250px;background:#3498db;margin-left:0" ><center style="margin-top:20%;">Study Room</center></div>
+  -->
+  {{/each}}
+
+
+  </div>
+
+</div>
+<h3 style="margin-left:1%"><b> Jarvis : </b> <i> Wassup Yo! </i></h3>
+
+</template>
