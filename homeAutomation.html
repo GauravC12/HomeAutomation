@@ -1,10 +1,17 @@
 <head>
-  <title>homeAutomation</title>
+  <title>Cortana</title>
+  <style>
+  body
+  {
+  background:black;
+  }
+  </style>
 </head>
+
 
 <body>
 
-  {{> renderPage}}
+  {{renderPage}}
 
 </body>
 
@@ -17,12 +24,18 @@
 
 <template name="os">
 
-<div class="hero-unit" style="height:100%;width:100%;margin-top:5%">
+<div class="hero-unit">
+        <h1 class="lead">
+{{time}}
+</h1>
 
+<br/>
 
-
+<h2 class="lead"> Tell me </h2>
+<input type="text" placeholder="Type something…">
 
 </div>
+
 
 </template>
 
@@ -43,6 +56,7 @@
   </div>
 
 </div>
-<h3 style="margin-left:1%"><b> Jarvis : </b> <i> Wassup Yo! </i></h3>
+<h3 style="margin-left:1%"><b> Jarvis : </b>
+        {{#each messages}} <i>{{message}}</i> {{/each}} </h3>
 
 </template>

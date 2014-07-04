@@ -1,4 +1,9 @@
 if (Meteor.isClient) {
+
+         Meteor.setInterval( function () {
+        Session.set("time",Date.now());
+    }, 1000 );
+
   Template.hello.greeting = function () {
     return "Welcome to homeAutomation.";
   };
@@ -14,9 +19,27 @@ Template.rooms.rooms = function()
 {
 
 return Rooms.find();
+};
+
+Template.rooms.messages = function ()
+
+{
+
+return Messages.find({},{sort:{time:-1},limit:1});
+
 }
 
-Template.rooms.message =
+Template.os.helpers({
+'time':function()
+{
+
+        return moment(Session.get("time")).format("hh:mm:ss A");
+//        return moment.tz("2013-11-18 11:55", "America/Toronto");
+}
+
+});
+
+
 
   Template.hello.events({
     'click input': function () {
@@ -63,6 +86,7 @@ Router.map(function () {
   });
 });
 
+/* Messages.insert({message:"hello",time:Date.now()}); */
 if (Meteor.isServer) {
   Meteor.startup(function () {
     // code to run on server at startup
@@ -70,3 +94,4 @@ if (Meteor.isServer) {
 }
 
 Rooms = new Meteor.Collection("rooms");
+Messages = new Meteor.Collection("messages");
