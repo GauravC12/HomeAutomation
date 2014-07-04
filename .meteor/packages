@@ -5,8 +5,9 @@
 
 standard-app-packages
 autopublish
-bootstrap
 insecure
 iron-router
 jquery
 moment
+bootstrap
+
