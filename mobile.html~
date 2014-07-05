@@ -4,27 +4,31 @@
 		border: black 2px solid;
 		width: 330px;
 		height: 600px;
-		background-image: url('background.jpg');
+		margin: 0 auto;
 	}
    </style>
-   <div style='height: 800px; background-color: black;'>
-	<center style='background: black;'>	
+   <div style='background: black;'>	
 	<div class="phone">
 		{{> homescreen}}
 	</div>
-   </center>
    </div>
+   <center>
+	<button class='btn btn-normal' style='margin-top: 20px;'>Back</button>
+   </center>
 </template>
 
 <template name="homescreen">
 	<style>
+		.phone {
+			background-image: url('background.jpg');
+		}
 		.body {
 			margin-top: 10px;
 			margin-left: 10px;
 			color: white;
 		}
 
-		.app > img {
+		.app img {
 			background-color: white;
 			width: 40px;
 			height: 40px;
@@ -39,12 +43,162 @@
 	</style>
 	<div class="body row-fluid">
 		<div class='app span3'>
-			<img src="Calendar.png"/>
-			<div style='margin-top: 5px;'>Calendar</div>
+			<center><img src="Calendar.png"/></center>
+			<center><div style='margin-top: 5px;'>Calendar</div></center>
 		</div>	
 		<div class='app span3'>
-			<img src="Thermostat.png"/>
-			<div style='margin-top: 5px;'>Thermostat</div>
+			<center><img src="Thermostat.png"/></center>
+			<center><div style='margin-top: 5px;'>Thermostat</div></center>
 		</div>	
+	</div>
+</template>
+
+<template name="calendar">
+	<style>
+		.phone {
+			background: #ecf0f1;
+		}
+
+		.appointment {
+			background: lightgray;
+			height: 80px;
+			width: 100%;
+			border-bottom: 1px gray solid;
+		}
+
+		.appointment > div {
+			padding: 10px;
+			margin-top: 10px;
+		}
+		
+		.apt-date {
+			font-weight: bold;
+			font-size: x-large;
+			color: #2980b9;
+		}
+
+		.apt-sub {
+			margin-top: 5px;
+			color: gray;
+		}
+
+		.apt-time {
+			font-size: xx-large;
+			margin-top: 10px;
+		}
+
+		.apt-duration {
+			margin-top: 5px;
+			font-size: x-small;
+		}
+
+		.add-appointment {
+			position: absolute;
+			width: 100%;
+			bottom: 0px;
+			background-color: #2980b9;
+			color: whitesmoke;
+		}
+
+		.add-appointment > div {
+			padding: 10px;
+		}
+
+		.phone {
+			position: relative;
+		}
+
+	</style>
+	<div class='appointment row-fluid'>
+		<div class='span6'>
+			<div class='apt-date'>July 4, 2014</div>
+			<div class='apt-sub'>Board Meeting</div>
+		</div>
+		<div class='span6' style='padding-left: 10px;'>
+			<div class='apt-time'>11:00 AM</div>
+			<!--<div class='apt-duration'>2 hours</div>-->
+		</div>
+	</div>
+
+	<div class='appointment row-fluid'>
+		<div class='span6'>
+			<div class='apt-date'>July 5, 2014</div>
+			<div class='apt-sub'>Presentation</div>
+		</div>
+		<div class='span6' style='padding-left: 10px;'>
+			<div class='apt-time'>02:00 PM</div>
+			<!--<div class='apt-duration'>30 minutes</div>-->
+		</div>
+	</div>
+
+
+	<!--Add Appointment-->
+	<div class='add-appointment'>
+		<div>
+			<div class='row-fluid'>
+				<div class='span6'>
+					<div class='label'>Enter Date</div>
+					<br/>
+					<input type='date' style='margin-top: 5px; width: 120px;'/>
+				</div>
+				<div class='span6'>
+					<div class='label'>Time</div>
+					<br/>
+					<input type='time' style='margin-top: 5px; width: 120px;'/>
+
+				</div>
+			</div>
+			<div class='row-fluid'>
+				<div class='span9'>
+					<div class='label' style='margin-top: 5px;'>Subject</div>
+					<br/>
+					<input type='text' style='margin-top: 5px;'/>
+				</div>
+				<div class='span3'>
+					<button class='btn btn-success' style='margin-top: 27px;'>Add</button>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+</template>
+
+<template name='thermostat'>
+	<style>
+		.phone {
+			background-image: url('background.jpg');
+			color: whitesmoke;
+		}
+
+		.body {
+			margin: 20px;
+		}
+
+		.temperature {
+			margin-top: 50px;
+			font-size: 132px;
+		}
+	</style>
+	<div class='body'>
+		<div class='label'>Current Temperature</div>
+		<div class='temperature'>27º</div>
+		<div class='row-fluid'>
+			<div class='span4'>
+						<div class='label' style='margin-top: 70px;'>Humidity</div>
+						<div>32%</div>
+			</div>
+
+			<div class='span4'>
+						<div class='label' style='margin-top: 70px;'>Precipitation</div>
+						<div>5 mm</div>
+			</div>
+		</div>
+
+		<div style='font-weight: bold; margin-top: 30px'>Set Temperature</div>
+		<input type='number' value='27'/>
+		<button class='btn'>Change</button>
+
 	</div>
 </template>
