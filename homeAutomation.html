@@ -1,5 +1,5 @@
 <head>
-  <title>Cortana</title>
+  <title>Jarvis</title>
   <style>
   body
   {
@@ -24,26 +24,85 @@
 
 <template name="os">
 
+
+<div class="hero-unit" style="background:black;color:white;margin-bottom:0" >
+        <br/>
+        <br/>
+        <br/>
+<center><h1 class="lead"> I am Jarvis </h1></center>
+<br/>
+<br/>
+<br/>
+{{> inputAutocomplete settings=settings class="lead" id="msg" style="height:40px;width:100%;font-size:1em;" class="input-xlarge"  autocomplete="off" placeholder="Tell me..."}}
+
+<button id="tellMe" class="btn btn-large btn-success">Tell me </button>
+<br/>
+<br/>
+<br/>
+
+<h3 class="lead" style="margin-left:1%;color:white;font-size:3em">
+        {{#each messages}} {{message}}  {{/each}}
+</h3>
+<br/>
+<br/>
+<!--
 <div class="hero-unit">
-        <h1 class="lead">
-{{time}}
-</h1>
+        <h2 class="lead" style="color:black;margin-left:1%;"> Appliances </h2>
+
+        <div class="bs-docs-grid" style="height:100%;width:100%;margin-left:1%;color:black">
+        <div class="row-fluid show-grid" >
+
+           {{#each entities}}
+          <div class="span2" style="color:black;height:150px;position:relatvie;margin-left:0%;margin-top:5%;border:0px skyblue solid;border-radius:5px" ><center><span class="lead"  style="font-size:1em;position:relative;">{{name}} </span><img src="{{icon}}" /></center></div>
+
+          {{/each}}
+
+
+          </div>
+
+        </div>
+</div>
+-->
+
+        <h4 class="lead">
+</h4>
 
 <br/>
 
-<h2 class="lead"> Tell me </h2>
-<input type="text" placeholder="Type something…">
+<br/>
 
 </div>
 
 
 </template>
 
+
+<template name="commandPill">
+    <span class="label">{{command}}</span>
+</template>
+<template name="roomPill">
+    <span class="label">{{name}}</span>
+</template>
+<template name="timesPill">
+    <span class="label">{{time}}</span>
+</template>
+<template name="momentPill">
+    <span class="label">{{name}}</span>
+</template>
+
+<template name="entitiesPill">
+    <span class="label">{{name}}</span>
+</template>
+
 <template name="rooms">
-<div class="bs-docs-grid" style="height:100%;width:100%;margin-top:5%;margin-left:1%;color:white;">
+
+<div class="bs-docs-grid" style="height:100%;width:100%;margin-top:3%;margin-left:1%;color:white;">
+<span class="lead" style="color:white;font-size:2em">{{time}} </span>
+
 <div class="row-fluid show-grid" >
+
    {{#each rooms}}
-  <div class="span6" style="height:250px;background:{{color}};margin-left:0%" ><center  style="margin-top:20%;">{{name}}</center></div>
+  <div class="span6" style="height:250px;background:{{color}};margin-left:0%" ><center class="lead" style="margin-top:20%;"><p class="lead" style="font-size:3em;" >{{name}}</p></center></div>
   <!---
   <div class="span6" style="height:250px;background:#f1c40f;margin-left:0%" ><center  style="margin-top:20%;">Kitchen</center></div>
   <div class="span6" style="height:250px;background:#e74c37;margin-left:0"  ><center style="margin-top:20%;">Bedroom</center></div>
@@ -56,7 +115,8 @@
   </div>
 
 </div>
-<h3 style="margin-left:1%"><b> Jarvis : </b>
-        {{#each messages}} <i>{{message}}</i> {{/each}} </h3>
+<h3 class="lead" style="margin-left:1%;color:white;font-size:3em"> Jarvis :
+        {{#each messages}} {{message}}  {{/each}}
+</h3>
 
 </template>
