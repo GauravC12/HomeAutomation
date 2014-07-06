@@ -11,9 +11,21 @@
 	<div class="phone">
 		{{> homescreen}}
 	</div>
+
+	<!--<div id='homescreenDiv' class='hidden'>
+		{{> homescreen}}
+	</div>
+
+	<div id='calendarDiv' class='hidden'>
+		{{> calendar}}
+	</div>
+
+	<div id='thermostatDiv' class='hidden'>
+		{{> thermostat}}
+	</div>-->
    </div>
    <center>
-	<button class='btn btn-normal' style='margin-top: 20px;'>Back</button>
+	<button id='backBtn' class='btn btn-normal' style='margin-top: 20px;'>Back</button>
    </center>
 </template>
 
@@ -42,15 +54,15 @@
 		}
 	</style>
 	<div class="body row-fluid">
-		<div class='app span3'>
+		<div id='calendarBtn' class='app span3'>
 			<center><img src="Calendar.png"/></center>
 			<center><div style='margin-top: 5px;'>Calendar</div></center>
 		</div>	
-		<div class='app span3'>
+		<div id='thermostatBtn' class='app span3'>
 			<center><img src="Thermostat.png"/></center>
 			<center><div style='margin-top: 5px;'>Thermostat</div></center>
 		</div>
-		<div class='app span3'>
+		<div id='callBtn' class='app span3'>
 			<center><img src="Calendar.png"/></center>
 			<center><div style='margin-top: 5px;'>Call</div></center>
 		</div>
